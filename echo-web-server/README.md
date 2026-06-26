@@ -1,13 +1,13 @@
 # Echo Web Server
 A native Node.js HTTP server designed to echo back the structural details of incoming requests in a clean JSON format.
 
-## 🚀 Live Demo
+## Live Demo
 You can test the live application deployed on Render here:
 **https://web-development-i-y03y.onrender.com/**
 > Since the application is hosted on a free Render instance, the first request after a period of inactivity may take **30–50 seconds** while the server wakes up.
 
 
-## 💻 Run Locally
+## Run Locally
 ### Default local URL
 ```text
 http://localhost:3000
