@@ -1,0 +1,11 @@
+{
+  "name": "static-file-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "dev:elegant": "node --watch server-elegant.js"
+  }
+}

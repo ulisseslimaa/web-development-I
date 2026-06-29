@@ -1,0 +1,10 @@
+{
+  "name": "Static File Server",
+  "version": "1.0.0",
+  "description": "Exemplo de resposta JSON",
+  "features": [
+    "MIME Types",
+    "Directory Listing",
+    "Express Static"
+  ]
+}
