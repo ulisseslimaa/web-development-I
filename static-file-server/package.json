@@ -2,6 +2,7 @@
   "name": "static-file-server",
   "version": "1.0.0",
   "private": true,
+  "description": "Servidor de arquivos estáticos",
   "type": "module",
   "scripts": {
     "start": "node server.js",
