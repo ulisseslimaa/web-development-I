@@ -1,0 +1,14 @@
+{
+    "name": "form-processing-server",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Servidor de processamento de formulários",
+    "type": "module",
+    "scripts": {
+        "start": "node form.js",
+        "dev": "node --watch form.js"
+    },
+    "dependencies": {
+        "nunjucks": "^3.2.4"
+    }
+}

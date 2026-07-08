@@ -1,0 +1,103 @@
+:root {
+    color-scheme: light dark;
+}
+
+/* Centraliza o card na tela */
+body {
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+}
+
+/* Sobrescreve o max-width largo do PicoCSS */
+body>main {
+    width: 100%;
+    max-width: 480px;
+    margin: 0;
+    /* anula o margin:auto do Pico que quebra o grid */
+}
+
+/* Banner de erro */
+.error-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--pico-color-red-500, #dc2626);
+    margin-bottom: var(--pico-spacing, 1rem);
+}
+
+.error-banner svg {
+    flex-shrink: 0;
+}
+
+/* Botões lado a lado */
+.btn-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: var(--pico-spacing, 1rem);
+}
+
+.btn-row button,
+.btn-row a[role="button"] {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+/* Link de voltar */
+.back-link {
+    opacity: 0.6;
+}
+
+.back-link:hover {
+    opacity: 1;
+}
+
+/* Estilos da página de Sucesso do Usuário */
+.success-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.success-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.success-header .subtitle {
+    color: var(--pico-muted-color);
+    font-size: 0.95rem;
+}
+
+.success-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(76, 175, 80, 0.15);
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.data-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.data-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+    padding: 0.75rem 0;
+}
+
+.data-list .label {
+    color: var(--pico-muted-color);
+}
