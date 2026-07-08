@@ -6,7 +6,8 @@
     "type": "module",
     "scripts": {
         "start": "node form.js",
-        "dev": "node --watch form.js"
+        "dev": "node --watch form.js",
+        "test": "node --test form.test.js"
     },
     "dependencies": {
         "nunjucks": "^3.2.4"
