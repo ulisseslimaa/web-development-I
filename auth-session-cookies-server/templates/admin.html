@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Painel Administrativo — Webdev Cookie{% endblock %}
+{% block wrap_class %}max-w-4xl{% endblock %}
+
+{% block nav_actions %}
+<a href="/" class="px-3 py-1.5 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">Início</a>
+<a href="/logout" class="px-3 py-1.5 text-sm font-medium text-red-600 bg-red-50 rounded-md hover:bg-red-100 transition-colors">Encerrar sessão</a>
+{% endblock %}
+
+{% block content %}
+<style>
+	.admin-table table { width: 100%; text-align: left; font-size: 0.875rem; color: #4b5563; }
+	.admin-table thead { background-color: #f9fafb; border-bottom: 1px solid #e5e7eb; color: #374151; }
+	.admin-table th, .admin-table td { padding: 0.75rem 1rem; }
+	.admin-table tbody tr { border-bottom: 1px solid #e5e7eb; }
+	.admin-table tbody tr:hover { background-color: #f9fafb; }
+	.admin-table code { font-family: monospace; font-size: 0.75rem; background-color: #f3f4f6; color: #1f2937; padding: 0.125rem 0.25rem; border-radius: 0.25rem; }
+</style>
+
+<div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 w-full">
+	<h1 class="text-2xl font-bold text-gray-900 mb-2">Painel administrativo</h1>
+	<p class="text-gray-500 mb-8">Dados em memória — fins de depuração e demonstração.</p>
+
+	<section class="mb-8">
+		<h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">Usuários</h3>
+		<div class="overflow-x-auto rounded-lg border border-gray-200 admin-table">
+			<table>
+				<thead>
+					<tr>
+						<th>E-mail</th>
+						<th>Salt</th>
+						<th>Hash da Senha</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for user in users %}
+					<tr>
+						<td>{{ user.email }}</td>
+						<td><code>{{ user.salt }}</code></td>
+						<td><code>{{ user.hash }}</code></td>
+					</tr>
+					{% else %}
+					<tr>
+						<td colspan="3" class="px-4 py-6 text-center text-gray-400 italic">Nenhum usuário cadastrado</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section>
+		<h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">Sessões</h3>
+		<div class="overflow-x-auto rounded-lg border border-gray-200 admin-table">
+			<table>
+				<thead>
+					<tr>
+						<th>Session ID</th>
+						<th>Usuário</th>
+						<th>Data de Criação</th>
+						<th>Views</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for sess in sessionsList %}
+					<tr>
+						<td><code>{{ sess.id }}</code></td>
+						<td>{{ sess.email or 'Anônimo' }}</td>
+						<td>{{ sess.createdAtFormatted or 'N/A' }}</td>
+						<td>{{ sess.views or 0 }}</td>
+					</tr>
+					{% else %}
+					<tr>
+						<td colspan="4" class="px-4 py-6 text-center text-gray-400 italic">Nenhuma sessão ativa</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>
+{% endblock %}

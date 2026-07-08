@@ -1,0 +1,16 @@
+{
+	"name": "webdev-cookie",
+	"version": "1.0.0",
+	"description": "Servidor com autenticação baseada em sessão, cookies e renderização server-side.",
+	"author": "Ulisses Limaa",
+	"type": "module",
+	"main": "main.js",
+	"scripts": {
+		"start": "node main.js",
+		"dev": "node --watch main.js",
+		"test:e2e": "node --test --test-concurrency=1 test/*.e2e.test.js"
+	},
+	"dependencies": {
+		"nunjucks": "^3.2.4"
+	}
+}
