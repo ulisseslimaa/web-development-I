@@ -107,8 +107,22 @@ function generateDirectoryListing(pathname, files) {
 
 function handleFileSystemError(err, req, res) {
     if (err.code === 'ENOENT') {
-        res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-        res.end('404 Not Found');
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(`
+        <!DOCTYPE HTML>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8">
+                <title>Error response</title>
+            </head>
+            <body>
+                <h1>Error response</h1>
+                <p>Error code: 404</p>
+                <p>Message: File not found.</p>
+                <p>Error code explanation: 404 - Nothing matches the given URI.</p>
+            </body>
+        </html>
+        `);
         logRequest(req, 404);
         return;
     }
